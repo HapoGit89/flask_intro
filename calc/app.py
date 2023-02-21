@@ -30,3 +30,17 @@ def divi():
     a = int(request.args["a"])
     b = int(request.args["b"])
     return f"{div(a,b)}"
+
+
+@app.route('/math/<operation>')
+def do_math(operation):
+    a = int(request.args["a"])
+    b = int(request.args["b"])
+    if operation == "add":
+        return f"{add(a,b)}"
+    if operation == "sub":
+        return f"{sub(a,b)}"
+    if operation == "mult":
+        return f"{mult(a,b)}"
+    if operation == "div":
+        return f"{div(a,b)}"
